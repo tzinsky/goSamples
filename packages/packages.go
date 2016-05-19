@@ -2,7 +2,7 @@ package main
 
 import (
 //	"fmt"
-	"github.com/tim-zinsky/goExamples/packages/employees"
+	"goSamples/packages/employees"
 )
 
 func main() {
@@ -15,5 +15,12 @@ func main() {
 	e2.SetPersonId(5)
 	e2.SetEmployeeId(3)
 	e2.Print();
+	e3:= employees.GetEmployee()
+	e3.Name = "Lucy"
+	e3.SetEmployeeId(120)
+	e3.SetPersonId(500)
+	e3.Person.Print();
+	e3.Print()
+	e2.Print()
 
 }
