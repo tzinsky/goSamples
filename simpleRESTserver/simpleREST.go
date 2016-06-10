@@ -6,6 +6,7 @@ import (
 )
 
 func response (rw http.ResponseWriter, request *http.Request) {
+    rw.Header().set()
     rw.Write([]byte ("Hello world!"))
 }
 
