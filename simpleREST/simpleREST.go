@@ -3,6 +3,7 @@ package main
 import (
     "net/http"
     "log"
+    "github.com/gorilla/mux"
 )
 
 func response (rw http.ResponseWriter, request *http.Request) {
@@ -14,6 +15,7 @@ func response (rw http.ResponseWriter, request *http.Request) {
 }
 
 func main() {
-    http.HandleFunc("/", response)
-    log.Fatal(http.ListenAndServe (":8080", nil))
+    router := mux.NewRouter().StrictSlash(true)
+    router.HandleFunc("/", response)
+    log.Fatal(http.ListenAndServe (":8080", router))
 }
