@@ -6,7 +6,10 @@ import (
 )
 
 func response (rw http.ResponseWriter, request *http.Request) {
-    //rw.Header().set()
+    log.Printf("ACTION: %s - Remote: %s Local URI: %s",request.Method, 
+                                             request.RemoteAddr,
+                                             request.RequestURI)
+    rw.Header().Set("Content-Type", "application/json; charset=UTF-8")
     rw.Write([]byte ("Hello world!"))
 }
 
