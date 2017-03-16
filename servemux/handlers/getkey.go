@@ -1,11 +1,11 @@
-package handlers 
+package handlers
 
 import (
 	"net/http"
 )
 
 func getKey() http.Handler {
-	return http.HandleFunc(func(w http.ResponseWriter r *http.Request) {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		key := r.URL.Query().Get("key")
 		if key == "" {
 			http.Error(w, "Missing key name in query string", http.StatusBadRequest)
