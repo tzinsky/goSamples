@@ -1,6 +1,7 @@
 package main
 
 import "net/http"
+import "goSamples/simpleREST/handlers"
 
 type Route struct {
 	Name        string
@@ -16,24 +17,24 @@ var routes = Routes{
 		"Index",
 		"GET",
 		"/",
-		Index,
+		handlers.Index,
 	},
 	Route{
 		"TransactionCreate",
 		"POST",
 		"/transactions",
-		TransactionCreate,
+		handlers.TransactionCreate,
 	},
 	Route{
 		"TransactionShow",
 		"GET",
 		"/transactions/{transactionId}",
-		TransactionShow,
+		handlers.TransactionShow,
 	},
 	Route{
 		"TransactionEdit",
 		"PUT",
 		"/transactions/{transactionId}",
-		TransactionEdit,
+		handlers.TransactionEdit,
 	},
 }
