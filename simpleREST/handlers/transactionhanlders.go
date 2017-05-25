@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"strconv"
 )
 
 func TransactionCreate(w http.ResponseWriter, r *http.Request) {
@@ -35,10 +36,20 @@ func TransactionIndex(w http.ResponseWriter, r *http.Request) {
 				Set error bad params
 			return
 	*/
+	count := 100
+	filters := ""
 	responseStatus := http.StatusOK
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	u, err := url.Parse(r.URL)
-	params, _ := url.ParseQuery(u.RawQuery)
+	u, err := url.Parse(r.RequestURI)
+	if err == nil {
+		params, _ := url.ParseQuery(u.RawQuery)
+		countstr := params.Get("count")
+		if countstr != "" {
+			count, err = strconv.Atoi(countstr)
+
+		}
+
+	}
 
 	w.WriteHeader(responseStatus)
 
