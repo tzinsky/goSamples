@@ -26,6 +26,12 @@ var routes = Routes{
 		handlers.TransactionCreate,
 	},
 	Route{
+		"TransactionIndex",
+		"GET",
+		"/transactions",
+		handlers.TransactionIndex,
+	},
+	Route{
 		"TransactionShow",
 		"GET",
 		"/transactions/{transactionId}",
