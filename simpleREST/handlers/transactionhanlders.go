@@ -48,7 +48,6 @@ func TransactionIndex(w http.ResponseWriter, r *http.Request) {
 			count, err = strconv.Atoi(countstr)
 
 		}
-
 	}
 
 	w.WriteHeader(responseStatus)
