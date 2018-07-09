@@ -4,7 +4,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"goSamples/servemux/storage"
+	"servemux/storage"
 )
 
 func PutKey(db storage.DB) http.Handler {

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"goSamples/simpleREST/handlers"
 	"net/http"
+	"simpleREST/handlers"
 )
 
 type Route struct {

@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"fmt"
-	"goSamples/servemux/storage"
 	"net/http"
+	"servemux/storage"
 )
 
 func GetKey(db storage.DB) http.Handler {

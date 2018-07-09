@@ -1,10 +1,10 @@
 package main
 
 import (
-	"goSamples/servemux/handlers"
-	"goSamples/servemux/storage"
 	"log"
 	"net/http"
+	"servemux/handlers"
+	"servemux/storage"
 )
 
 func main() {
