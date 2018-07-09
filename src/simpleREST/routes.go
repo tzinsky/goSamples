@@ -1,7 +1,9 @@
 package main
 
-import "net/http"
-import "goSamples/simpleREST/handlers"
+import (
+	"goSamples/simpleREST/handlers"
+	"net/http"
+)
 
 type Route struct {
 	Name        string
